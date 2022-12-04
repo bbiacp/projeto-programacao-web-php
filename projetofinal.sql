@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2022 às 12:06
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.12
+-- Tempo de geração: 04-Dez-2022 às 20:39
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `moviestar`
+-- Banco de dados: `projetofinal`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,14 @@ CREATE TABLE `movies` (
   `category` varchar(50) DEFAULT NULL,
   `length` varchar(50) DEFAULT NULL,
   `users_id` int(11) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `movies`
+--
+
+INSERT INTO `movies` (`id`, `title`, `description`, `image`, `trailer`, `category`, `length`, `users_id`) VALUES
+(5, 'Purple Hearts', 'Uma cantora se casa por conveniência com um militar que está prestes a ir para a guerra, mas uma tragédia transforma esse relacionamento de fachada em realidade. A história de amor, superação, persistência de Luke e Cassie', '332fd10e1b531ec3a29b3924aa86415a5798936cd51881d7a4c72d4debf88010b42402c39afd93d982a9850260b9eb3850589433f06a1741bfd81185.jpg', 'https://www.youtube.com/embed/WTLgg8oRSBE', 'Romance', '122 minutos', 5);
 
 -- --------------------------------------------------------
 
@@ -50,7 +57,7 @@ CREATE TABLE `reviews` (
   `review` text DEFAULT NULL,
   `users_id` int(11) UNSIGNED DEFAULT NULL,
   `movies_id` int(11) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -67,7 +74,7 @@ CREATE TABLE `users` (
   `image` varchar(200) DEFAULT NULL,
   `token` varchar(200) DEFAULT NULL,
   `bio` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `users`
@@ -75,7 +82,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`, `image`, `token`, `bio`) VALUES
 (1, 'teste', 'teste', 'teste@teste.com', '$2y$10$npfcuxQBxqxa2AtxkFkbRuN9ddq5YO/khCFxzKEm.h/OMHYVOpmfe', NULL, '54119bd4aac04e0e2b048e516d04a18c93737084e005fb31282b38ccdf0f5169261580a1518af1e0b47591131e7bb8656f52', NULL),
-(2, 'eae', 'eae', 'Teste123@gmail.com', '$2y$10$THx22gUm3qy6cwEUDmGa0.dhRB5gkVlQjBSM1vM8FD/PMNYqfWFAS', NULL, 'a1022b37f6b2a64d40594e96d770d6a37a696f5f3139a7a4725b94f0747c9dc23262c53f9307476b3e2068241a51770db603', NULL);
+(2, 'eae', 'eae', 'Teste123@gmail.com', '$2y$10$THx22gUm3qy6cwEUDmGa0.dhRB5gkVlQjBSM1vM8FD/PMNYqfWFAS', NULL, 'a1022b37f6b2a64d40594e96d770d6a37a696f5f3139a7a4725b94f0747c9dc23262c53f9307476b3e2068241a51770db603', NULL),
+(5, 'Ana', 'Beatriz', 'ana@ana.com', '$2y$10$NcRU4odOskWdhUabQHGUA.DEt0zxICnyzuAyNqJvo81qVrrZHRfje', '928dc3e90444015af542a2dc6df411c9d0d655d8066bf42534e0de2e0ce15157c63b518b61815673afc3673d6b581a327c51009771847e8caf3620ab.jpg', 'e75e869d7356af3be4942185d2d4e27bfe0470a47f8f859f87fc99152fa9736491cea85b0ed29b70578c305b46c2622d1021', 'amante de romances');
 
 --
 -- Índices para tabelas despejadas
@@ -109,7 +117,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `reviews`
@@ -121,7 +129,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas

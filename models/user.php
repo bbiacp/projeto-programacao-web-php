@@ -1,6 +1,6 @@
 <?php
 
-    class User {
+  class User {
 
     public $id;
     public $name;
@@ -27,9 +27,9 @@
       return bin2hex(random_bytes(60)) . ".jpg";
     }
 
-    }
+  }
 
-    interface UserDAOInterface {
+  interface UserDAOInterface {
 
     public function buildUser($data);
     public function create(User $user, $authUser = false);
@@ -43,4 +43,4 @@
     public function destroyToken();
     public function changePassword(User $user);
 
-    }
+  }

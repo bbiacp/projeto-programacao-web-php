@@ -476,6 +476,19 @@
 }
 
 /* Responsivo */
+@media (max-width: 1100px){
+
+  .movie-card {
+    width: calc(50% - 17px);
+  }
+
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Responsivo */
 @media(max-width: 450px) {
 
   #main-container {
@@ -503,11 +516,6 @@
 
   .movie-card {
     width: 100%;
-  }
-
-  .movie-details {
-    display: flex;
-    flex-direction: column;
   }
 
   .movie-details span {
@@ -567,5 +575,4 @@
   .fas.fa-bars {
     color: #F5C518;
   }
-
 }
